@@ -1,9 +1,14 @@
 package com.example.demo;
 
+import java.util.Properties;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.core.env.Environment;
+import org.springframework.core.env.PropertiesPropertySource;
 
 import com.example.demo.config.ApplicationConfiguration;
 import com.example.demo.model.Tour;
@@ -18,6 +23,14 @@ public class TourServiceApplication {
 		
 	ConfigurableApplicationContext ctx	=SpringApplication.run(TourServiceApplication.class, args);
 	          
+//	                 ConfigurableEnvironment  env = 	ctx.getEnvironment();
+//	                        	
+//	                 Properties props = new Properties();
+//	                 
+//	                    props.put("spring.main.allow-bean-definition-overriding", "true");
+//	                    
+//	                    env.getPropertySources().addFirst(new PropertiesPropertySource("custom", props));
+//	                    
 	                        	
 //	     Tour tour =(Tour)ctx.getBean("tour");  // class Name with FirstCharacter in lower case
 	     
@@ -40,12 +53,24 @@ public class TourServiceApplication {
 //	     System.out.println(nextTour);
 	     
 
-	    TourCatalog catalog = ctx.getBean("catalog",TourCatalog.class);
-	    
-	    
-	    
-	    System.out.println(catalog);
-	     
+//	    TourCatalog catalog = ctx.getBean("catalog",TourCatalog.class);
+//	    
+//	    
+//	    
+//	    System.out.println(catalog);
+	
+	//
+	
+	   Tour lankaTour = (Tour)ctx.getBean("lankaTour");
+	   
+	   System.out.println(lankaTour);
+	   
+	       System.out.println("is SingleTon : =" +ctx.isSingleton("lankaTour"));
+	       
+	       System.out.println("is Protype : =" +ctx.isPrototype("lankaTour"));
+	       
+	       
+	       
 	     ctx.close();
 	
 	}

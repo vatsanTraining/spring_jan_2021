@@ -1,10 +1,14 @@
 package com.example.demo.config;
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 
 import com.example.demo.model.Tour;
 import com.example.demo.model.TourAgent;
@@ -15,13 +19,14 @@ public class ApplicationConfiguration {
 
 	
 	
-//	@Bean
-//	@Primary
-//	public Tour lankaTour() {
-//		
-//		return new Tour(101,"Colombo",56000);
-//	}
-//	
+	@Bean
+	@Primary
+	@Scope(scopeName = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+	public Tour lankaTour() {
+		
+		return new Tour(101,"Colombo",56000);
+	}
+	
 
 	
 	@Bean
