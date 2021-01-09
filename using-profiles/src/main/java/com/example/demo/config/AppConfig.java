@@ -15,7 +15,7 @@ public class AppConfig {
 	@Profile(value = "dev")
 	public Customer ram() {
 		
-		return new Customer(1010, "Ram");
+		return new Customer(1010, "Ram-dev");
 	}
 	
 	
@@ -23,7 +23,7 @@ public class AppConfig {
 	   @Profile(value = "prod")
        public Customer shyam() {
 		
-		return new Customer(2010, "Shyam");
+		return new Customer(2010, "Shyam-prod");
 	}
 	
 	

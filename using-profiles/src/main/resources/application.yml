@@ -1,0 +1,30 @@
+
+spring:
+  profiles:
+  - "dev"
+  application:
+    name: Using Profiles
+  
+server:
+  port: 6060
+  
+logging:
+  level:
+    '[org.springframework]': info   
+
+---
+
+
+spring:
+  profiles:
+  - "prod"
+  application:
+    name: Using Profiles
+  
+server:
+  port: 6565
+  
+logging:
+  level:
+    '[org.springframework]': debug   
+
