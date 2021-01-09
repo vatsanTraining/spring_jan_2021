@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component(value = "catalog")
 public class TourCatalog {
 
 	
@@ -25,7 +24,7 @@ public class TourCatalog {
 	public Tour getTour() {
 		return tour;
 	}
-	@Autowired(required = false)
+	//@Autowired(required = false)
 	//@Qualifier(value = "thailand")
 	public void setTour(Tour tour) {
 		this.tour = tour;
@@ -33,7 +32,7 @@ public class TourCatalog {
 	public TourAgent getAgent() {
 		return agent;
 	}
-	@Autowired
+	//@Autowired
 	public void setAgent(TourAgent agent) {
 		this.agent = agent;
 	}

@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -12,6 +13,7 @@ import org.springframework.core.env.PropertiesPropertySource;
 
 import com.example.demo.config.ApplicationConfiguration;
 import com.example.demo.model.Tour;
+import com.example.demo.model.TourAgent;
 import com.example.demo.model.TourCatalog;
 
 
@@ -21,16 +23,18 @@ public class TourServiceApplication {
 
 	public static void main(String[] args) {
 		
-	ConfigurableApplicationContext ctx	=SpringApplication.run(TourServiceApplication.class, args);
-	          
-//	                 ConfigurableEnvironment  env = 	ctx.getEnvironment();
-//	                        	
-//	                 Properties props = new Properties();
-//	                 
-//	                    props.put("spring.main.allow-bean-definition-overriding", "true");
-//	                    
-//	                    env.getPropertySources().addFirst(new PropertiesPropertySource("custom", props));
-//	                    
+	//ConfigurableApplicationContext ctx	=SpringApplication.run(TourServiceApplication.class, args);
+	  
+		 Properties props = new Properties();
+         
+            props.put("spring.main.allow-bean-definition-overriding", "true");
+        
+		ConfigurableApplicationContext ctx	=
+				    new SpringApplicationBuilder(TourServiceApplication.class)
+				            .properties(props).build().run(args);
+	
+	  
+	                
 	                        	
 //	     Tour tour =(Tour)ctx.getBean("tour");  // class Name with FirstCharacter in lower case
 	     
@@ -68,6 +72,25 @@ public class TourServiceApplication {
 	       System.out.println("is SingleTon : =" +ctx.isSingleton("lankaTour"));
 	       
 	       System.out.println("is Protype : =" +ctx.isPrototype("lankaTour"));
+	       
+	       
+//	       TourAgent agent = ctx.getBean(TourAgent.class,"agentManish");
+//	       
+//	       System.out.println(agent);
+	       
+	       Tour tour = ctx.getBean(Tour.class,"thailand");
+	       System.out.println("Thai Tour" +tour);
+	       
+//	       
+//	       TourCatalog swiss = ctx.getBean(TourCatalog.class,"swissTour");
+//	       
+//	       System.out.println(swiss);
+	       
+	       
+           TourCatalog africa = ctx.getBean(TourCatalog.class,"africaBean");
+	       
+	       System.out.println("Africa Tour"+africa);
+	       
 	       
 	       
 	       
