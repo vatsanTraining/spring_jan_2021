@@ -15,12 +15,14 @@ import com.example.demo.model.Tour;
 @Repository
 public interface TourRepository extends JpaRepository<Tour, Integer> {
 
+	//Methods are created by using findByXxx  => xxx refers to the property in the entity class
 	public Tour findByTourName(String tourName);
 	
+	// To Use custom query with table and column names , DQL
 	@Query(nativeQuery = true,value = "Select * from synetours where amount>:srchValue")
 	public List<Tour> findTourGreathanFare(@Param("srchValue") double fare);
 	
-	// Using JPQL
+	// Using JPQL and DML commands for which @Modifying and @Transactional is used
 	@Query(value = "update Tour set amount=:revisedFare where amount>:srchValue")
 	@Modifying
 	@Transactional

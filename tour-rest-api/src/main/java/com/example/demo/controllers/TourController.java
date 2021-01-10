@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,10 +14,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.services.TourService;
+
+import io.swagger.v3.oas.annotations.Operation;
+
 import java.util.*;
 import com.example.demo.model.*;
 @RestController
 @RequestMapping(path = "/api/v1/tours")
+@CrossOrigin(origins = "*")
 public class TourController {
 	
 	
@@ -31,6 +36,7 @@ public class TourController {
 		return this.service.findAll();
 	}
 
+	@Operation(summary = "Method searches by Name")
 	@GetMapping(path = "/srch/name/{name}")
 	public Tour getTourByName(@PathVariable("name") String name){
 		

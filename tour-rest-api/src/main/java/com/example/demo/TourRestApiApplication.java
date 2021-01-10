@@ -9,7 +9,11 @@ import org.springframework.context.annotation.Bean;
 import com.example.demo.model.Tour;
 import com.example.demo.repos.TourRepository;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
 @SpringBootApplication
+@OpenAPIDefinition(info = @Info(title = "Tour Service Rest API"))
 public class TourRestApiApplication {
 
 	public static void main(String[] args) {
