@@ -2,10 +2,12 @@ package com.example.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +15,7 @@ import com.example.demo.services.TourService;
 import java.util.*;
 import com.example.demo.model.*;
 @RestController
+@RequestMapping(path = "/api/v1/tours")
 public class TourController {
 	
 	
@@ -21,20 +24,25 @@ public class TourController {
 	private TourService service;
 
 	
-	@GetMapping(path = "/api/v1/tours")
+	@GetMapping(path = "/")
 	public List<Tour> getAllTours(){
 		
 		return this.service.findAll();
 	}
 	
-	@GetMapping(path = "/api/v1/tours/{id}")
-	public Tour getTourById(@PathVariable("id") int id){
+	@GetMapping(path = "/{id}")
+	public ResponseEntity<Tour> getTourById(@PathVariable("id") int id){
 		
-		return this.service.findById(id).orElseThrow( () -> new RuntimeException("ID Not Found"));
+		Tour resp =this.service.findById(id).orElseThrow( () -> new RuntimeException("ID Not Found"));
+		
+		//return this.service.findById(id).orElseThrow( () -> new RuntimeException("ID Not Found"));
+	
+		 return ResponseEntity.ok().body(resp);
+	
 	}
 	
 	
-	@PostMapping(path = "/api/v1/tours")
+	@PostMapping(path = "/")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public Tour addTour(@RequestBody Tour entity) {
 		
