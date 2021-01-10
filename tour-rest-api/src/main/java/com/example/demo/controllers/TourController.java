@@ -45,6 +45,14 @@ public class TourController {
 		
 	}
 	
+	@GetMapping(path = "/update/amount/{amount}/{revised}")
+	public ResponseEntity<String> updateAmount(@PathVariable("amount") double amount,@PathVariable("revised") double revised){
+		
+		int rowsUpdated= this.service.updateFare(amount, revised);
+		
+		return ResponseEntity.ok().body(rowsUpdated +" =Rows Updated");
+		
+	}
 
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<Tour> getTourById(@PathVariable("id") int id){

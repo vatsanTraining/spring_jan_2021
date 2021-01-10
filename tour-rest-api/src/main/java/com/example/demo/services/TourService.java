@@ -52,4 +52,9 @@ public class TourService {
     	  
     	  return this.repo.findTourGreathanFare(amount);
       }
+      
+      public int updateFare(double amount , double revised){
+    	  
+    	  return this.repo.updateFare(amount, revised);
+      }
 }
