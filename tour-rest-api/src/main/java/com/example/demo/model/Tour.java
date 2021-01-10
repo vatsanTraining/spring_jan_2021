@@ -1,11 +1,18 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
 // @Component Enables to Register the Bean 
 
+@Entity
+@Table(name = "synetours")
 public class Tour {
 
+	@Id
 	private int tourId;
 	private String tourName;
 	private double amount;
