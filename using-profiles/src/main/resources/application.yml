@@ -26,5 +26,5 @@ server:
   
 logging:
   level:
-    '[org.springframework]': debug   
+    '[org.springframework]': info   
 
