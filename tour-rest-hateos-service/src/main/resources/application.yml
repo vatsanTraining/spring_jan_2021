@@ -1,0 +1,20 @@
+
+spring:
+  application:
+    name: tour-rest-hateos-api
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: srivatsan
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        
+server:
+  port: 6262
+  

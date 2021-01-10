@@ -57,4 +57,19 @@ public class TourService {
     	  
     	  return this.repo.updateFare(amount, revised);
       }
+      
+      public Optional<Tour>  removeTour(Tour entity) {
+    	  
+    	  Tour tour = null;
+    	  
+    	   if(this.repo.existsById(entity.getTourId())) {
+    		   
+    		   this.repo.delete(entity);
+    		   
+    		   tour = entity;
+    	   } 
+    	  Optional<Tour> optional = Optional.of(tour);
+    	  
+    	   return optional;
+      }
 }
