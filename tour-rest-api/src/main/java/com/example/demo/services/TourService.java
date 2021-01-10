@@ -33,4 +33,12 @@ public class TourService {
 		
 		return this.repo.findById(id);
 	}
+	
+	
+      public Tour updateTour(Tour entity) {
+		
+		return this.repo.save(entity);
+				
+      }
+	
 }
