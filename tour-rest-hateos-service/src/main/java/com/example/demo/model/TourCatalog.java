@@ -2,9 +2,11 @@ package com.example.demo.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.RepresentationModel;
 import org.springframework.stereotype.Component;
 
-public class TourCatalog {
+public class TourCatalog extends CollectionModel<TourCatalog> {
 
 	
 	private Tour tour;

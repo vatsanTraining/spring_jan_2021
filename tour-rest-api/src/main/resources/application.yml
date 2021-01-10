@@ -14,7 +14,19 @@ spring:
       ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:5050
         
 server:
   port: 6060
   
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        
