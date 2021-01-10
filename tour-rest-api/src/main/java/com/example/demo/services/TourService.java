@@ -41,4 +41,15 @@ public class TourService {
 				
       }
 	
+      public Tour findByName(String tourName) {
+    	  
+    	  return this.repo.findByTourName(tourName);
+      }
+      
+      
+      
+      public List<Tour> tourGreaterThan(double amount){
+    	  
+    	  return this.repo.findTourGreathanFare(amount);
+      }
 }

@@ -14,7 +14,7 @@ public interface TourRepository extends JpaRepository<Tour, Integer> {
 
 	public Tour findByTourName(String tourName);
 	
-	@Query(nativeQuery = true,name = "Select * from synetours where amount>:srchValue")
+	@Query(nativeQuery = true,value = "Select * from synetours where amount>:srchValue")
 	public List<Tour> findTourGreathanFare(@Param("srchValue") double fare);
 	
 }

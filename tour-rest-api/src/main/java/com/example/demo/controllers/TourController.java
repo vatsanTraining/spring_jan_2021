@@ -30,7 +30,22 @@ public class TourController {
 		
 		return this.service.findAll();
 	}
+
+	@GetMapping(path = "/srch/name/{name}")
+	public Tour getTourByName(@PathVariable("name") String name){
+		
+		return this.service.findByName(name);
+		
+	}
 	
+	@GetMapping(path = "/srch/amount/{amount}")
+	public List<Tour> getTourByAmount(@PathVariable("amount") double amount){
+		
+		return this.service.tourGreaterThan(amount);
+		
+	}
+	
+
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<Tour> getTourById(@PathVariable("id") int id){
 		
@@ -57,5 +72,6 @@ public Tour updateTour(@RequestBody Tour entity) {
 	
 	return this.service.updateTour(entity);
 }
+
 
 }
