@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,10 @@ public class TourService {
 	public Tour addTour(Tour entity) {
 		
 		return this.repo.save(entity);
+	}
+	
+	public Optional<Tour> findById(int id) {
+		
+		return this.repo.findById(id);
 	}
 }
