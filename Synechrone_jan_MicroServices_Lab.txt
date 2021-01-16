@@ -1,5 +1,14 @@
 SPRING BOOT MICRO SERVICES - JAN-2021 - WEEKEND -BATCH
 
+Configuring Lombok :
+
+1. Download Lombak.jar from https://projectlombok.org/
+2. run the jar file  java -jar lombok.jar
+3. Paste the Reference of Your STS directory
+4. It will update sprintoolsuite.ini file with javaagent
+5. Restart the STS and use Lombok annotations on your class
+
+
 LAB - 1
 
   Create a Eureka Registry Service 
@@ -12,7 +21,7 @@ LAB - 1
 4. Run the Application 
 5. In the browser invoke http://localhost:8761 
 
-
+LAB - 2
 Create a Service to Register With Eureka 
 
     1. Create a Spring Boot Starter Project with web,eureka client and Lombok
@@ -22,6 +31,27 @@ Create a Service to Register With Eureka
     5. Update application.yml
     6. Run and it will get Registered with Eureka 
 
+Lab -3
 
+    1. Create a Spring Boot Starter Project with web,eureka client and Lombok
+    2. Add @EnableDiscoveryClient to the class with main method
+    3. Register RestTemplate with @LoadBalanced
+    4. Create RestController and autwire RestTemplate
+    5. Use the RestTemplate xxxForObject Method and using the serviceid invoke the service
+    6. Run and Check By Invoking the service.
+  
 
+Lab - 4
+
+    1. Create a Spring Boot Starter Project with web,eureka client and Lombok
+    2. Add @EnableDiscoveryClient to the class with main method
+    3. Register RestTemplate WITHOUT @LoadBalanced
+    4. Create RestController and autwire RestTemplate and LoadBalancerClient
+    5. Use the LoadBalancerClient choose method and get reference of serviceInstance 
+    6. Using service instance get the baseURL
+    7. Use the RestTemplate xxxForObject Method and using the requestURL invoke the service
+    6. Run and Check By Invoking the service.
+
+Lab - 5
+    1. Eureka Cluster - p2p
 ====================================================================
