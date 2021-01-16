@@ -36,13 +36,11 @@ public class PaymentController {
 		
 	
 		String reqURL = baseURL+"api/v1/customers";
-		
-		
+				
 		
 		return this.template.getForObject(reqURL, String.class);
 		
 		
-	
 	}
 	
 	
