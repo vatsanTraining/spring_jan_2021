@@ -23,4 +23,10 @@ public class PaymentServiceApplication {
 		return new RestTemplate();
 	}
 
+	
+	@Bean
+	public RestTemplate lbtempate() {
+		
+		return new RestTemplate();
+	}
 }

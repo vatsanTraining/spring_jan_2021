@@ -1,11 +1,11 @@
 
 spring:
   application:
-    name: payment-service
+    name: invoice-service
   profiles:
   - dev
 server:
-  port: 5757
+  port: 6565
   
 eureka:
   client:
@@ -17,11 +17,11 @@ eureka:
 
 spring:
   application:
-    name: payment-service
+    name: invoice-service
   profiles:
   - prod
 server:
-  port: 5959
+  port: 6969
   
 eureka:
   client:
