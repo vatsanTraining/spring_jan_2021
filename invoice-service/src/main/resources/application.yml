@@ -2,28 +2,15 @@
 spring:
   application:
     name: invoice-service
-  profiles:
-  - dev
+  
 server:
   port: 6565
   
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
-          
-
----
-
-spring:
-  application:
-    name: invoice-service
-  profiles:
-  - prod
-server:
-  port: 6969
-  
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka-peer1:8765/eureka,http://eureka-peer2:8770/eureka
+         instance:    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 2
+    
+    

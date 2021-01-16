@@ -1,4 +1,6 @@
-
+server:
+  port: 6060
+  
 spring:
   application:
     name: tour-rest-api
@@ -20,13 +22,9 @@ spring:
         url:
         - http://localhost:5050
         
-server:
-  port: 6060
-  
 management:
   endpoints:
     web:
       exposure:
         include:
         - "*"
-        
