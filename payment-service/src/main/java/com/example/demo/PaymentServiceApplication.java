@@ -25,7 +25,7 @@ public class PaymentServiceApplication {
 
 	
 	@Bean
-	public RestTemplate lbtempate() {
+	public RestTemplate lbtemplate() {
 		
 		return new RestTemplate();
 	}

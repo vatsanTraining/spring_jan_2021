@@ -62,7 +62,7 @@ public class PaymentController {
 		String reqURL = baseURL+"/api/v1/invoices";
 		
 		
-		return this.template.getForObject(reqURL, String.class);
+		return this.lbtemplate.getForObject(reqURL, String.class);
 		
 		
 		
