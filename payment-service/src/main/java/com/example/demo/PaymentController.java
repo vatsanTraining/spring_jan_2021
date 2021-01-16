@@ -38,10 +38,11 @@ public class PaymentController {
 		String reqURL = baseURL+"api/v1/customers";
 		
 		
+		
 		return this.template.getForObject(reqURL, String.class);
 		
 		
-		
+	
 	}
 	
 	
@@ -55,11 +56,12 @@ public class PaymentController {
 		
 		
 		String baseURL = instance.getUri().toString();
-		
+	
 		
 		log.info("BASE URL :="+baseURL);
 
-		String reqURL = baseURL+"/api/v1/invoices";
+		
+		String reqURL = baseURL+"api/v1/invoices";
 		
 		
 		return this.lbtemplate.getForObject(reqURL, String.class);

@@ -17,7 +17,7 @@ public class PaymentServiceApplication {
 	
 	
 	@Bean
-	@LoadBalanced  // To use restTemplate with serviceId
+	@LoadBalanced  
 	public RestTemplate template() {
 		
 		return new RestTemplate();
