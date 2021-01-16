@@ -1,0 +1,29 @@
+
+spring:
+  application:
+    name: payment-service
+  profiles:
+  - dev
+server:
+  port: 5757
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+          
+
+---
+
+spring:
+  application:
+    name: payment-service
+  profiles:
+  - prod
+server:
+  port: 5959
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
