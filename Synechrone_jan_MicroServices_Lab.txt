@@ -1,0 +1,27 @@
+SPRING BOOT MICRO SERVICES - JAN-2021 - WEEKEND -BATCH
+
+LAB - 1
+
+  Create a Eureka Registry Service 
+
+  
+=> DONE 1. Create a Spring Boot Starter Project with Web,Eureka Server
+=> DONE 2. Add @EnableEurekaServer Annotation on the class with main method
+=> Done 3. Create application.yml file by renaming application.properties 
+           and add the requried configuration (portNumber , registerwith eureka                  ,fetchregistry,defaultzone)
+4. Run the Application 
+5. In the browser invoke http://localhost:8761 
+
+
+Create a Service to Register With Eureka 
+
+    1. Create a Spring Boot Starter Project with web,eureka client and Lombok
+    2. Add @EnableDiscoveryClient to the class with main method
+    3. Create a Pojo Class
+    4. Create a RestController
+    5. Update application.yml
+    6. Run and it will get Registered with Eureka 
+
+
+
+====================================================================
