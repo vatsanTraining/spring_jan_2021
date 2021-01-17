@@ -35,6 +35,7 @@ public class PaymentController {
 	String baseURL = "http://CUSTOMER-SERVICE/";
 	
 	
+	// Using the ServiceId to call the services 
 	@GetMapping(path = "/api/v1/client/customers")
 	public String getCustomerDetails() {
 		
@@ -47,7 +48,8 @@ public class PaymentController {
 		
 	}
 	
-	
+	// Calling with FallBack - If the customer service takes more than 3000 milli second 
+	// to respond the fallback method will be called and the response sent back
 	@GetMapping(path = "/api/v1/client/customers/{id}")
 	@HystrixCommand(fallbackMethod = "getCustomerByIdFallback",
 	commandProperties = 
@@ -62,12 +64,13 @@ public class PaymentController {
 		
 		
 	}
-	
+	// Fall back method to be used 
 	public String getCustomerByIdFallback(int id){
 		
 		return "{'id':0,'name':'guest'}";
 	}
 	
+	// Using the Ribbon API to call the services 
 	@GetMapping(path = "/api/v1/client/invoices")
 	public String getInvoiceDetails() {
 		
