@@ -31,7 +31,7 @@ spring:
         url:
         - http://localhost:9595
 server:
-  port: 6565
+  port: 6161
 
 management:
   endpoints:
