@@ -3,17 +3,40 @@ spring:
   - dev
   application:
     name: review-service
+    
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:9595  
 server:
   port: 6363
-  
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"  
 ---
 spring:
   profiles:
   - prod
   application:
     name: review-service
+    
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:9595
 server:
   port: 6565
 
-      
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"      
   
