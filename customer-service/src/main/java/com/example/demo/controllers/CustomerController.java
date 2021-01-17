@@ -27,9 +27,19 @@ public class CustomerController {
 	
 	
 	@GetMapping(path = "/api/v1/customers/{id}")
-	public Customer getCustomerById(@PathVariable("id") int id) {
+	public Customer getCustomerById(@PathVariable("id") int id) throws InterruptedException {
 		
-		
-		return this.customer;
+		if(id < 7) {
+		   return this.customer;
+		   
+		} else {
+			
+			Thread.sleep(7000);
+			
+			this.customer.setCustomerName("Delayed Customer");
+			 
+			return this.customer;
+			
+		}
 	}
 }
