@@ -1,0 +1,12 @@
+server:
+  port: 3535
+  
+
+review-client:
+   ribbon:
+     eureka:
+       enabled: false
+     listOfServers: localhost:6565,localhost:6363
+     ServerListRefreshIntervel: 15000
+    
+    
