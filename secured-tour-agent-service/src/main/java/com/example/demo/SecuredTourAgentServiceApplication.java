@@ -3,15 +3,19 @@ package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.actuate.audit.AuditEventRepository;
+import org.springframework.boot.actuate.audit.InMemoryAuditEventRepository;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
+import com.example.demo.config.SecurityConfig;
 import com.example.demo.entity.TourAgent;
 import com.example.demo.repos.TourAgentRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 @Slf4j
 public class SecuredTourAgentServiceApplication {
 
@@ -19,6 +23,12 @@ public class SecuredTourAgentServiceApplication {
 		SpringApplication.run(SecuredTourAgentServiceApplication.class, args);
 	}
 
+	
+	@Bean
+	public AuditEventRepository auditEvent() {
+		
+		 return new InMemoryAuditEventRepository();
+	}
 	
 	
 	@Bean
