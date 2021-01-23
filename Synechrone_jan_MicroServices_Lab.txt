@@ -1,5 +1,7 @@
 SPRING BOOT MICRO SERVICES - JAN-2021 - WEEKEND -BATCH
-
+---------------------------------------------------
+Day -1 
+----------------------------------------------------
 Configuring Lombok :
 
 1. Download Lombak.jar from https://projectlombok.org/
@@ -54,4 +56,97 @@ Lab - 4
 
 Lab - 5
     1. Eureka Cluster - p2p
+    2. Create a Spring Boot Starter Project with web and Eureka Server
+    3. Add @EnableEurekaServer annotation to the class with main method
+    4. In the the application.yml file create two profiles peer1 and peer2
+    5. Add the requried configuration parameters like        applicationname,hostname,service-url
+    6. update C:\Windows\System32\drivers\etc\hosts  file
+    7. Run the Application in both the profile and observe the change in eureka               dashboard
+    8. Create a Service and Register it with the instances and Observe the workings
 ====================================================================
+
+
+Day -2
+----------------------------------------------------
+
+case 1 - Service registred with eureka then use RestTemplate with @LoadBalanced
+case 2- Multiple instance of the service registred with eureka use Resttemplate with @LoadBalanced
+case 3 - Multiple Instance of the service registred with eureka use LoadBalancerClient and RestTemplate without @LoadBalanced
+case 4- Multiple instance of the service running without registring to eureka  then use @RibbonClient with custom configuration and Resttemplate with @LoadBalanced
+
+Lab - 1   Ribbon Client Configuration
+
+   1. Create a Rest API  and run multiple instance of it
+   2. Create a Spring Boot Starter Project with web and ribbon
+   3. Add @RibbonClient() to the class with main method
+   4. Create a Class with @Configuraion away from the default component scan
+   5. Register the Bean and add the required methods
+   6. Use the RestTemplate with @LoadBalaned and run the application
+
+Lab-  2  Spring Config Server
+ 
+   1. Create a GitHUB Repository with some folder and application.yml
+   2. Create a service with ConfigServer module 
+   3. Add EnableConfigServer
+   4. Create Service and add bootstrap.yml and application.yml 
+   5. check it pulls the values from configserver
+
+
+ Lab -3  
+
+   1. create spring boot starter project with following dependecies
+       web , lombok,config client,actuator,mysql-driver, data-jpa
+   2. create a bootstrap.yml and application.yml
+
+    
+
+case 1 -> config server running independetly -> client application bootstrap.yml
+
+case 2 -> config server registered eureka -> client application bootstrap.yml give service id
+
+case 3. spring 2.4  server same, client application add cloud bootstrap module, no bootstrap.yml file just application.yml and the property is   config:
+    import:
+    - optional:configserver:http://localhost:8888
+
+Lab -4  Creating Admin Server 
+
+     1. Create Starter Project with admin Server
+     2. Add @EnableAdminServer annotation
+     3. Update the application.yml
+     4. In the existing projects add admin client 
+     5. update the application.yml and uri of admin server
+     
+-------------------------------------------------------------------------
+
+Day -3  
+
+  Lab -1  
+
+    1. Create a Spring Boot Starter Project with web,lombok,mysql,data jpa,actuator
+    2. Create a entity class , Repository, service,controller
+    3. Update the Application.yml => add info ,add actuator related config props
+    4. Check the Application
+    5. Add a AuditEvent Bean and observer
+    6. Use loggers endpoint and observe
+    7. Create a Custom End Point and check
+
+ Lab - 2
+
+    1. On Project Done in Lab-1 Add Spring Security Module
+    2. Create a Configuration Class by extending WebSecurityConfigurerAdapter
+    3. Override the configure(HttpSecurity) and configure(AuthenticationManagerBuilder)
+    4. Add the InMemoryauhentication details 
+    5. Check the application
+   
+        
+
+
+
+
+
+
+
+
+https://github.com/vatsanTraining/spring_jan_2021
+https://github.com/vatsank/spring_presentations
+
