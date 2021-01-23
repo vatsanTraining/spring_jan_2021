@@ -29,11 +29,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
+//		    http.authorizeRequests()
+//		      .antMatchers("/api/v1/agents/**")
+//		         .authenticated().and().formLogin()
+//		           .and().logout().logoutSuccessUrl("/api/v1/agents")
+//		                .invalidateHttpSession(true).deleteCookies("JSESSIONID");
+//		   
+		    
+		   
 		    http.authorizeRequests()
 		      .antMatchers("/api/v1/agents/**")
-		         .authenticated().and().formLogin()
+		         .authenticated().and().httpBasic()
 		           .and().logout().logoutSuccessUrl("/api/v1/agents")
-		                .invalidateHttpSession(true).deleteCookies("JSESSIONID");
+		                .invalidateHttpSession(true).deleteCookies("JSESSIONID")
+		                      .and().csrf().disable();
 		   
 	}
 
