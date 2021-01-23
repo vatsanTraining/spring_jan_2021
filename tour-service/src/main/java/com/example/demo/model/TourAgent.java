@@ -13,7 +13,6 @@ public class TourAgent {
 	
 	public TourAgent() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public TourAgent(int id, String agentName, long mobileNumber) {
 		super();
