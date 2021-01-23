@@ -16,16 +16,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	
 	
-	
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
+
+
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
+		 http.authorizeRequests()
 		  .antMatchers("/","/actuator")
-		    .permitAll().antMatchers("/api/v1/tours/**").authenticated().anyRequest()
+		    .permitAll().antMatchers("/api/v1/customers").authenticated().anyRequest()
 		       .authenticated().and().oauth2Login();
 		   }
-   
+
+ 
 
 	
 }

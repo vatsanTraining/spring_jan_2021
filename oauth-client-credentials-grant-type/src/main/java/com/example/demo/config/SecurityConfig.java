@@ -13,19 +13,26 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	
 	
-	
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
 
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-		  .antMatchers("/","/actuator")
-		    .permitAll().antMatchers("/api/v1/tours/**").authenticated().anyRequest()
-		       .authenticated().and().oauth2Login();
-		   }
-   
+		http
+        .authorizeRequests()
+       .antMatchers("/login").permitAll()
+       .antMatchers("/oauth/authorize")
+        .authenticated();
+      }
 
 	
 }

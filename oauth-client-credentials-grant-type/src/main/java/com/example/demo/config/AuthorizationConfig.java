@@ -33,7 +33,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 		
 		 clients.inMemory().withClient("ourclient")
 		      .secret(encoder.encode("pass123"))
-		         .authorizedGrantTypes("password")
+		         .authorizedGrantTypes("client_credentials")
 		            .scopes("read","write")
 		               .redirectUris("http://localhost:8585/login/code/ourclient");
 		 
