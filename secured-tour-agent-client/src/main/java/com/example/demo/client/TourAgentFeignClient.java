@@ -12,4 +12,6 @@ public interface TourAgentFeignClient {
 	public String getAll();
 	
 	
+	
+	
 }

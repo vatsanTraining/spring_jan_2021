@@ -1,5 +1,7 @@
 package com.example.demo.config;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -20,15 +22,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	PasswordEncoder encode;
 	
+	
+	@Autowired
+	DataSource dataSource;
+	
 	@Value("${security.enabled}")
 	private String isPermitAll;
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-		auth.inMemoryAuthentication()
-		         .withUser("india")
-		             .password(encode.encode("india"))
-		                 .roles("ADMIN");
+//		auth.inMemoryAuthentication()
+//		         .withUser("india")
+//		             .password(encode.encode("india"))
+//		                 .roles("ADMIN");
+		
+		
+		auth.jdbcAuthentication().dataSource(dataSource).usersByUsernameQuery(
+                "SELECT username, password, enabled from users where username = ?")
+            .authoritiesByUsernameQuery(
+                "SELECT u.username, a.authority " +
+                "FROM authorities a, users u " +
+                "WHERE u.username = ? " +
+                "AND u.username = a.username"
+            )
+        .passwordEncoder(new BCryptPasswordEncoder());
+
 		
 	}
 
