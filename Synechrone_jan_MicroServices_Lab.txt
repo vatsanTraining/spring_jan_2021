@@ -122,24 +122,69 @@ Day -3
 
   Lab -1  
 
-    1. Create a Spring Boot Starter Project with web,lombok,mysql,data jpa,actuator
-    2. Create a entity class , Repository, service,controller
-    3. Update the Application.yml => add info ,add actuator related config props
-    4. Check the Application
-    5. Add a AuditEvent Bean and observer
-    6. Use loggers endpoint and observe
-    7. Create a Custom End Point and check
+  Done  1. Create a Spring Boot Starter Project with web,lombok,mysql,data jpa,actuator
+  Done  2. Create a entity class , Repository, service,controller
+  Done   3. Update the Application.yml => add info ,add actuator related config props
+  Done  4. Check the Application
+  Done     5. Add a AuditEvent Bean and observer
+ Done    6. Use loggers endpoint and observe
+ Done   7. Create a Custom End Point and check
 
  Lab - 2
 
-    1. On Project Done in Lab-1 Add Spring Security Module
-    2. Create a Configuration Class by extending WebSecurityConfigurerAdapter
-    3. Override the configure(HttpSecurity) and configure(AuthenticationManagerBuilder)
-    4. Add the InMemoryauhentication details 
-    5. Check the application
+   Done  1. On Project Done in Lab-1 Add Spring Security Module
+   Done  2. Create a Configuration Class by extending WebSecurityConfigurerAdapter
+   Done 3. Override the configure(HttpSecurity) and configure(AuthenticationManagerBuilder)
+   Done 4. Add the InMemoryauhentication details 
+   Done 5. Check the application
+   Done 6. Set the Logging level and observe
    
         
+Lab -3 
 
+Done:     1. Create a Spring Starter Project with web,feign
+Done:    2. Create Interface with @FeignClient
+Done:     3. Add @EnableFiegnClients
+Done:     4. Create a Configuration class with @Bean BasicAuthRequestInterceptor
+Done:     5. Create a Controller wire the interface and call the methods
+
+
+Lab-4 
+1. Create Spring Boot Starter Project with following dependencis : web,lombok,actuator,oAuth2ResourceServer,cloud oauth
+
+2.Create a Model Class 
+
+3. Register Beans of the Model class and BctryptPasswordEncoder
+
+4. Create a Rest Controller which returns the Model class Object
+
+5. Try Executing and Calling the Rest Controller EndPoint and observe the Login form being shown
+
+6. Add @EnableResourceServer annotation to the class with main method and observe
+    It should throw an exception with => Full authentication is required to access this resource
+
+7. Create a Java class SecurityConfig by extending WebSecurityConfigurerAdapter and 
+   override the configure() method, and authenticationManagerBean() methods
+
+8  AutoWire  PasswordEncoder Bean 
+
+9.Create a Configuration Class by Extending  AuthorizationServerConfigurerAdapter 
+10 Add the annotation @Configuration and @EnableAuthorizationServer
+
+11.AutoWrite AuthenticationManager and PasswordEncode
+
+12 Override all three configure methods
+
+14 Run the Application 
+
+15. Use the postman and make a Post Request with http://localhost:8080/oauth/token
+    pass the basicauthentication details and paramters like grant_type      username,password
+
+16. Onsuccessful execution should get the token
+
+17 Use the token to make the call to the Hospital Controller and view the response
+
+    
 
 
 
