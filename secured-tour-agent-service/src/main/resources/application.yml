@@ -45,6 +45,6 @@ logging:
     
     
 security:
-  enabled: false
+  enabled: true
    
        
