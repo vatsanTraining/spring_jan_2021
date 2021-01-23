@@ -38,20 +38,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		 System.out.println("==========="+ isPermitAll);
 		 
 		 if(isPermitAll.equals("true")) {
+		  
+//			 http.authorizeRequests()
+//	      .antMatchers("/api/v1/agents/**")
+//		         .authenticated().and().formLogin()
+//		           .and().logout().logoutSuccessUrl("/api/v1/agents")
+//		                .invalidateHttpSession(true).deleteCookies("JSESSIONID");
+//		    
 		    http.authorizeRequests()
-	      .antMatchers("/api/v1/agents/**")
-		         .authenticated().and().formLogin()
+		      .antMatchers("/api/v1/agents/**")
+		         .authenticated().and().httpBasic()
 		           .and().logout().logoutSuccessUrl("/api/v1/agents")
-		                .invalidateHttpSession(true).deleteCookies("JSESSIONID");
+		                .invalidateHttpSession(true).deleteCookies("JSESSIONID")
+		                      .and().csrf().disable();
+		
+		    
 		 } else {
 		   
-//		    http.authorizeRequests()
-//		      .antMatchers("/api/v1/agents/**")
-//		         .authenticated().and().httpBasic()
-//		           .and().logout().logoutSuccessUrl("/api/v1/agents")
-//		                .invalidateHttpSession(true).deleteCookies("JSESSIONID")
-//		                      .and().csrf().disable();
-//		
+		 
 		   
 		
 		    http.authorizeRequests()
