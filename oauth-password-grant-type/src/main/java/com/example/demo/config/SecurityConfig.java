@@ -14,18 +14,33 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	
-	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-		  .antMatchers("/","/actuator")
-		    .permitAll().antMatchers("/api/v1/tours/**").authenticated().anyRequest()
-		       .authenticated().and().oauth2Login();
+        http
+        .authorizeRequests()
+       .antMatchers("/login").permitAll()
+       .antMatchers("/oauth/authorize")
+        .authenticated();
+    
 		   }
    
+	@Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("india").password(encoder.encode("india"))
+                .roles("USER");
+    }
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
 
 	
 }

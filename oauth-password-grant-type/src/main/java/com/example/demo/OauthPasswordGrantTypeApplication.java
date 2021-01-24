@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import com.example.demo.domain.Customer;
 
 @SpringBootApplication
-
+@EnableResourceServer
 public class OauthPasswordGrantTypeApplication {
 
 	public static void main(String[] args) {
@@ -22,6 +22,10 @@ public class OauthPasswordGrantTypeApplication {
 		return new Customer(110,"Ramesh Patil",4505050);
 	}
 	
-	
+	@Bean
+	public BCryptPasswordEncoder encoder() {
+		
+		return new BCryptPasswordEncoder();
+	}
 	
 }
