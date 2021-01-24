@@ -1,0 +1,72 @@
+2021-01-24 12:31:02.057  INFO 32056 --- [main] com.example.demo.UsingElkApplication     : Starting UsingElkApplication on DESKTOP-76QJGKM with PID 32056 (E:\training\training_workspaces\Spring_Synechron_Jan_2021\using-elk\target\classes started by vatsa in E:\training\training_workspaces\Spring_Synechron_Jan_2021\using-elk)
+2021-01-24 12:31:02.061  INFO 32056 --- [main] com.example.demo.UsingElkApplication     : No active profile set, falling back to default profiles: default
+2021-01-24 12:31:03.953  INFO 32056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-24 12:31:03.969  INFO 32056 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-24 12:31:03.972  INFO 32056 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-24 12:31:04.132  INFO 32056 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-24 12:31:04.134  INFO 32056 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1995 ms
+2021-01-24 12:31:04.659  INFO 32056 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-24 12:31:05.093  INFO 32056 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-01-24 12:31:05.194  INFO 32056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-24 12:31:05.215  INFO 32056 --- [main] com.example.demo.UsingElkApplication     : Started UsingElkApplication in 3.807 seconds (JVM running for 5.296)
+2021-01-24 12:31:07.484  INFO 32056 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-24 12:31:07.486  INFO 32056 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-24 12:31:07.496  INFO 32056 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2021-01-24 12:34:51.646  INFO 20960 --- [restartedMain] com.example.demo.UsingElkApplication     : Starting UsingElkApplication on DESKTOP-76QJGKM with PID 20960 (E:\training\training_workspaces\Spring_Synechron_Jan_2021\using-elk\target\classes started by vatsa in E:\training\training_workspaces\Spring_Synechron_Jan_2021\using-elk)
+2021-01-24 12:34:51.652  INFO 20960 --- [restartedMain] com.example.demo.UsingElkApplication     : No active profile set, falling back to default profiles: default
+2021-01-24 12:34:51.730  INFO 20960 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-24 12:34:51.730  INFO 20960 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-24 12:34:53.555  INFO 20960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-24 12:34:53.579  INFO 20960 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-24 12:34:53.580  INFO 20960 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-24 12:34:53.793  INFO 20960 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-24 12:34:53.793  INFO 20960 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2062 ms
+2021-01-24 12:34:54.233  INFO 20960 --- [restartedMain] com.example.demo.UsingElkApplication     : Customer Ramesh Created
+2021-01-24 12:34:54.437  INFO 20960 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-24 12:34:54.845  INFO 20960 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-01-24 12:34:54.852  INFO 20960 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-01-24 12:34:54.915  WARN 20960 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-01-24 12:34:54.921  INFO 20960 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-24 12:34:54.928  INFO 20960 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-01-24 12:34:54.955  INFO 20960 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-01-24 12:34:54.958 ERROR 20960 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2021-01-24 12:34:57.901  INFO 32056 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-01-24 12:34:58.188  INFO 32056 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-24 12:35:09.203  INFO 25212 --- [restartedMain] com.example.demo.UsingElkApplication     : Starting UsingElkApplication on DESKTOP-76QJGKM with PID 25212 (E:\training\training_workspaces\Spring_Synechron_Jan_2021\using-elk\target\classes started by vatsa in E:\training\training_workspaces\Spring_Synechron_Jan_2021\using-elk)
+2021-01-24 12:35:09.206  INFO 25212 --- [restartedMain] com.example.demo.UsingElkApplication     : No active profile set, falling back to default profiles: default
+2021-01-24 12:35:09.330  INFO 25212 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-24 12:35:09.330  INFO 25212 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-24 12:35:11.363  INFO 25212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-24 12:35:11.374  INFO 25212 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-24 12:35:11.375  INFO 25212 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-24 12:35:11.494  INFO 25212 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-24 12:35:11.495  INFO 25212 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2165 ms
+2021-01-24 12:35:11.728  INFO 25212 --- [restartedMain] com.example.demo.UsingElkApplication     : Customer Ramesh Created
+2021-01-24 12:35:11.871  INFO 25212 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-24 12:35:12.318  INFO 25212 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-01-24 12:35:12.325  INFO 25212 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-01-24 12:35:12.400  INFO 25212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-01-24 12:35:12.423  INFO 25212 --- [restartedMain] com.example.demo.UsingElkApplication     : Started UsingElkApplication in 3.994 seconds (JVM running for 6.21)
+2021-01-24 12:35:14.221  INFO 25212 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-24 12:35:14.223  INFO 25212 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-01-24 12:35:14.228  INFO 25212 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-01-24 12:35:19.131  INFO 25212 --- [http-nio-8080-exec-1] c.e.demo.controllers.CustomerController  : Get Customer Called
+2021-01-24 12:35:30.367  INFO 25212 --- [http-nio-8080-exec-3] c.e.demo.controllers.CustomerController  : Get Customer By Id Greater than 7 Called
+2021-01-24 12:37:11.396  INFO 25212 --- [http-nio-8080-exec-6] c.e.demo.controllers.CustomerController  : Get Customer By Id Greater than 7 Called
+2021-01-24 12:37:14.486  INFO 25212 --- [http-nio-8080-exec-9] c.e.demo.controllers.CustomerController  : Get Customer Called
+2021-01-24 12:37:59.499  INFO 25212 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

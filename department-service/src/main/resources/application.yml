@@ -1,0 +1,19 @@
+
+server:
+  port: 8081
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+
+spring:
+  cloud:
+    bus:
+      enabled: true
+  kafka:
+    bootstrap-servers:
+    -  ${KAFKA_ADDR:http://localhost:9092}
