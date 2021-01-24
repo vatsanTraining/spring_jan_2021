@@ -24,12 +24,13 @@ public class MyZuulFilter extends ZuulFilter {
 		    HttpServletRequest request = ctx.getRequest();
 		    System.out.println("REQUEST METHOD: " + request.getMethod() + " Request URL : " + request.getRequestURL().toString());
 		
+		    System.out.println(ctx.get("authorization"));
 		    
-		     if(ctx.getRequest().getRequestURI().contains("customer")) {
-		          ctx.setResponseStatusCode(400);
-		          ctx.setResponseBody("Zuul is preventing");
-		          ctx.setSendZuulResponse(false);
-		          }
+//		     if(ctx.getRequest().getRequestURI().contains("customer")) {
+//		          ctx.setResponseStatusCode(400);
+//		          ctx.setResponseBody("Zuul is preventing");
+//		          ctx.setSendZuulResponse(false);
+//		          }
 
 		    return null;
 		

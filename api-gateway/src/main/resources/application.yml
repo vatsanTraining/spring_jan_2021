@@ -3,11 +3,12 @@ spring:
     name: api-gateway
 
 zuul:
+  sensitive-headers: 
   routes:
     review-service:
       path: /review-service/**
       url: http://localhost:3535 
-
+      s
 
 eureka:
   client:

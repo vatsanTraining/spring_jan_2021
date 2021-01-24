@@ -23,29 +23,29 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	PasswordEncoder encode;
 	
 	
-	@Autowired
-	DataSource dataSource;
-	
-	@Value("${security.enabled}")
-	private String isPermitAll;
+//	@Autowired
+//	DataSource dataSource;
+//	
+//	@Value("${security.enabled}")
+//	private String isPermitAll;
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-//		auth.inMemoryAuthentication()
-//		         .withUser("india")
-//		             .password(encode.encode("india"))
-//		                 .roles("ADMIN");
+		auth.inMemoryAuthentication()
+		         .withUser("india")
+		             .password(encode.encode("india"))
+		                 .roles("ADMIN");
 		
 		
-		auth.jdbcAuthentication().dataSource(dataSource).usersByUsernameQuery(
-                "SELECT username, password, enabled from users where username = ?")
-            .authoritiesByUsernameQuery(
-                "SELECT u.username, a.authority " +
-                "FROM authorities a, users u " +
-                "WHERE u.username = ? " +
-                "AND u.username = a.username"
-            )
-        .passwordEncoder(new BCryptPasswordEncoder());
+//		auth.jdbcAuthentication().dataSource(dataSource).usersByUsernameQuery(
+//                "SELECT username, password, enabled from users where username = ?")
+//            .authoritiesByUsernameQuery(
+//                "SELECT u.username, a.authority " +
+//                "FROM authorities a, users u " +
+//                "WHERE u.username = ? " +
+//                "AND u.username = a.username"
+//            )
+//        .passwordEncoder(new BCryptPasswordEncoder());
 
 		
 	}
@@ -53,33 +53,39 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		 System.out.println("==========="+ isPermitAll);
-		 
-		 if(isPermitAll.equals("true")) {
-		  
-//			 http.authorizeRequests()
-//	      .antMatchers("/api/v1/agents/**")
-//		         .authenticated().and().formLogin()
-//		           .and().logout().logoutSuccessUrl("/api/v1/agents")
-//		                .invalidateHttpSession(true).deleteCookies("JSESSIONID");
-//		    
-		    http.authorizeRequests()
+		   http.authorizeRequests()
 		      .antMatchers("/api/v1/agents/**")
-		         .authenticated().and().httpBasic()
-		           .and().logout().logoutSuccessUrl("/api/v1/agents")
-		                .invalidateHttpSession(true).deleteCookies("JSESSIONID")
-		                      .and().csrf().disable();
+		         .authenticated().and().httpBasic();
+		          
 		
-		    
-		 } else {
-		   
-		 
-		   
 		
-		    http.authorizeRequests()
-		    .antMatchers("/**")
-		     .permitAll();
-		 }
+//		 System.out.println("==========="+ isPermitAll);
+//		 
+//		 if(isPermitAll.equals("true")) {
+//		  
+////			 http.authorizeRequests()
+////	      .antMatchers("/api/v1/agents/**")
+////		         .authenticated().and().formLogin()
+////		           .and().logout().logoutSuccessUrl("/api/v1/agents")
+////		                .invalidateHttpSession(true).deleteCookies("JSESSIONID");
+////		    
+//		    http.authorizeRequests()
+//		      .antMatchers("/api/v1/agents/**")
+//		         .authenticated().and().httpBasic()
+//		           .and().logout().logoutSuccessUrl("/api/v1/agents")
+//		                .invalidateHttpSession(true).deleteCookies("JSESSIONID")
+//		                      .and().csrf().disable();
+//		
+//		    
+//		 } else {
+//		   
+//		 
+//		   
+//		
+//		    http.authorizeRequests()
+//		    .antMatchers("/**")
+//		     .permitAll();
+//		 }
 	}
 
 	
