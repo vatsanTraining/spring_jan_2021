@@ -1,5 +1,7 @@
 package com.example.demo.filters;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.context.annotation.FilterType;
@@ -31,6 +33,11 @@ public class MyZuulFilter extends ZuulFilter {
 //		          ctx.setResponseBody("Zuul is preventing");
 //		          ctx.setSendZuulResponse(false);
 //		          }
+		    
+//			HttpServletRequest req = ctx.getRequest();
+//			Optional<String> authorizationHeader = Optional.ofNullable(req.getHeader("Authorization"));
+//
+//			 System.out.println("Header ======"+ authorizationHeader.get());
 
 		    return null;
 		

@@ -13,11 +13,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	
-	@Autowired
-	PasswordEncoder encode;
 	
 	
 	@Override
@@ -38,20 +36,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		    
-		    http.authorizeRequests().antMatchers("/customer-service")
-		       .authenticated().antMatchers("/tour-agent-api").authenticated().and().httpBasic();
+		    http.authorizeRequests().antMatchers("/customer-service/**")
+		       .authenticated().antMatchers("/tour-agent-api/**").authenticated().and().httpBasic();
 		    
-		   
-			//http.authorizeRequests().antMatchers("/**").permitAll();
+		  
 			
 	}
 
 	
-	@Bean
-	public PasswordEncoder encoder() {
-		
-		return new BCryptPasswordEncoder();
-	}
+	
 	
 }
 
